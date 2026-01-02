@@ -1,0 +1,161 @@
+/* ===== MARCO GENERAL ===== */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    text-align: center;
+    padding: 20px;
+    border: 8px solid #7b1e1e; /* rojo vino */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #333;
+}
+
+/* ===== CONTENEDOR DE SERVICIOS ===== */
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    margin: 30px auto;
+    max-width: 900px;
+}
+
+/* ===== TARJETAS BASE ===== */
+.servicio {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    user-select: none;
+}
+
+/* EFECTO GENERAL */
+.servicio:hover,
+.servicio:active {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* ===== COLORES POR SERVICIO ===== */
+
+/* Agua – rojo vino */
+.servicio.agua:hover,
+.servicio.agua:active {
+    background: #7b1e1e;
+    color: white;
+}
+
+/* Predial – negro */
+.servicio.predial:hover,
+.servicio.predial:active {
+    background: #000000;
+    color: white;
+}
+
+/* Electricidad – #043034 */
+.servicio.electricidad:hover,
+.servicio.electricidad:active {
+    background: #043034;
+    color: white;
+}
+
+/* Internet – celeste */
+.servicio.internet:hover,
+.servicio.internet:active {
+    background: #6ec6ff;
+    color: #003344;
+}
+
+/* Telefonía – opcional (gris elegante) */
+.servicio.telefonia:hover,
+.servicio.telefonia:active {
+    background: #444;
+    color: white;
+}
+
+/* ===== IMÁGENES ===== */
+.servicio img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    transition: filter 0.3s;
+}
+
+/* Aclarar imagen cuando cambia fondo */
+.servicio:hover img,
+.servicio:active img {
+    filter: brightness(1.2);
+}
+
+/* ===== TEXTO ===== */
+.servicio span {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* ===== FORMULARIO ===== */
+form {
+    max-width: 400px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 8px;
+}
+
+input, select {
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #7b1e1e;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background: #5a1515;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .servicio img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .servicio span {
+        font-size: 0.9rem;
+    }
+
+    form {
+        margin: 20px;
+    }
+}

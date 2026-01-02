@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargando Servicios</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            border: 8px solid #7b1e1e; /* rojo vino institucional */
+            box-sizing: border-box;
+            margin: 0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .loader-image {
+            width: 260px;
+            height: 260px;
+            margin-bottom: 60px;
+        }
+
+        .progress-bar {
+            width: 80%;
+            max-width: 500px;
+            height: 30px;
+            background-color: #ddd;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0;
+            background-color: #7b1e1e; /* mismo rojo vino */
+            border-radius: 15px;
+            animation: fillProgress 5s linear forwards;
+        }
+
+        @keyframes fillProgress {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>POR AMOR A CARLOS A. CARRILLO</h1>
+
+    <img src="Imagenes/Escudo Carrillo.jpg" alt="Escudo Carrillo" class="loader-image">
+
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <script>
+        // Tiempo igual al de la animación (5 segundos)
+        setTimeout(() => {
+            window.location.href = "pagos_de_servicios.html";
+        }, 5000);
+    </script>
+
+</body>
+</html>

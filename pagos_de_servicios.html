@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagos de Servicios</title>
+    <link rel="icon" href="Imagenes/Escudo Carrillo.jpg" type="image/png">
+    <link rel="stylesheet" href="pagos_de_servicio.css">
+</head>
+<body>
+
+<h1>Pagos De Servicios <br> Carlos A. Carrillo. Ver.</h1>
+<p>Selecciona el servicio que deseas pagar</p>
+
+<!-- SERVICIOS CON IMÁGENES -->
+<section class="servicios">
+    <div class="servicio agua" onclick="seleccionarServicio('agua')">
+        <img src="Imagenes/CAEV logo.jpg" alt="Agua">
+        <span>Agua C.A.C.</span>
+    </div>
+
+    <div class="servicio predial" onclick="seleccionarServicio('predial')">
+        <img src="Imagenes/Predial.png" alt="Predial">
+        <span>Predial C.A.C.</span>
+    </div>
+
+    <div class="servicio electricidad" onclick="seleccionarServicio('electricidad')">
+        <img src="Imagenes/CFE logo.png" alt="Electricidad">
+        <span>Electricidad</span>
+    </div>
+
+    <div class="servicio internet" onclick="seleccionarServicio('internet')">
+        <img src="Imagenes/TELMEX Logo.png" alt="Internet">
+        <span>Internet</span>
+    </div>
+</section>
+
+<!-- FORMULARIO DE PAGO -->
+<section id="pago">
+    <h2>Realizar Pago</h2>
+
+    <form action="/procesar_pago" method="POST">
+        <label>Servicio:</label>
+        <select id="servicio" name="servicio" required>
+            <option value="">Selecciona un servicio</option>
+            <option value="agua">Agua</option>
+            <option value="predial">Predial</option>
+            <option value="electricidad">Electricidad</option>
+            <option value="internet">Internet</option>
+        </select>
+
+        <label>Monto a pagar:</label>
+        <input type="number" name="monto" required>
+
+        <label>Método de pago:</label>
+        <select name="metodo_pago" required>
+            <option value="tarjeta_credito">Tarjeta de Crédito</option>
+            <option value="tarjeta_debito">Tarjeta de Débito</option>
+            <option value="transferencia">Transferencia Bancaria</option>
+            <option value="paypal">PayPal</option>
+        </select>
+
+        <button type="submit">Pagar</button>
+    </form>
+</section>
+
+<script>
+function seleccionarServicio(servicio) {
+    document.getElementById("servicio").value = servicio;
+    document.getElementById("pago").scrollIntoView({ behavior: "smooth" });
+}
+</script>
+
+</body>
+</html>
